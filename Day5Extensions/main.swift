@@ -14,12 +14,19 @@ extension Double {
     var cm: Double { return self / 100.0 }
     var mm: Double { return self / 1_000.0 }
     var ft: Double { return self / 3.28084 }
+    
+    func currency() ->String{
+        let s = String.init(format: "$%.2f", self)
+        return s
+    }
 }
 
 var meter = 100.0
 print(meter.km)
 print(meter.cm)
 print(meter.m)
+
+print(meter.currency())
 
 extension String{
     func repeatNtimes(n : Int){
@@ -30,3 +37,4 @@ extension String{
 }
 
 "hello".repeatNtimes(n: 10)
+
